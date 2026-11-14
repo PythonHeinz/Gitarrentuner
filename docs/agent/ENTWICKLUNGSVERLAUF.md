@@ -2,6 +2,14 @@
 
 Behält die letzten rund 10 Tage; Älteres geht nach `docs/archiv/`.
 
+## 14.11.2026 – GitarrenHeinz-Audio: Tonerkennung
+- **Was:** `lib/audio.js` ersetzt den Platzhalter: YIN-Tonhöhenerkennung, Mikrofon (ohne Browser-Aufbereitung), Gate, Anschlagsunterdrückung, Median, Modi Automatik/Manuell, Bezugston über `configure`, Nadelzonen-Hilfe `Tuner.Audio.zone()`. Eine Datei statt `lib/audio/`, damit `index.html` (Fundament) unverändert bleibt; der Rechenteil ist unter Node testbar.
+- **Entschieden (Entwickler):** Bezugston 400–480 Hz, Schritt 1, Standard 440; Zonen ±5 / ±20 Cent.
+- **Dateien:** `lib/audio.js`, `tests/test_audio.js`, `tests/test_audio_browser.py`, `tests/run_all.sh` (beide Tests eingebunden), `docs/AUDIO.md`, `docs/HANDYTEST.md`, `docs/agent/TECHNIK.md`; `version.js` auf 0.1.1.
+- **Tests:** `bash tests/run_all.sh` grün. Synthetisch: alle Saiten, ±50 Cent, 44,1/48 kHz, Bezug 435/440/445, Fehler ≤ 0,05 Cent (mit Rauschen ca. 2,4 Cent), kein Oktavfehler bei schwachem Grundton, Stille und Rauschen ohne falsche Töne. Browser: Chromium mit Fake-Mikrofon (WAV): Erkennung, Messrate, Modi, Bezugston, Stop gibt Tracks frei, Hintergrund-Stopp, Fehlerfälle (abgelehnt, kein Mikrofon). Werte in `docs/AUDIO.md`.
+- **Nicht auf dem Gerät geprüft:** echte Gitarre, Handymikrofon, Latenz, Systemanzeige des Mikrofons, Verhalten im Hintergrund auf dem Pixel (Liste: `docs/HANDYTEST.md`).
+- **Offen:** Konstanten nach dem Handytest nachstellen. `Tuner.config`-Kommentar „vorläufig“ im Kern (Strang App) kann entfallen. Ob die Anzeige `Tuner.Audio.zone()` nutzt, entscheidet Strang Design.
+
 ## 14.11.2026 – GitarrenHeinz-App: Schritt 1 Gerüst
 - **Was:** lauffähiges Grundgerüst als installierbare Offline-Web-App. Seite mit Kopfzeile, Sprachumschalter DE/EN, Anzeigebereich (Platzhalter), Startknopf (Platzhalter), Modus Automatik/Manuell, Bezugston-Stepper (Standard 440 Hz).
 - **Übernommen (kopiert):** Sprachverfahren aus Heinz UI (`lib/core.js` in AIUIheinz: `lang`, `setLang`, `t`, `pick`, `esc`), angepasst auf JSON-Textdateien je Sprache; Service-Worker- und Manifestmuster aus INCIheinz-app (angepasst: Version aus `version.js`, Cache-first ohne Hintergrundabruf). **Nicht** übernommen: `core.css` (Google-Farbwelt, Stil bleibt Strang Design).
