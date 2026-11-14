@@ -7,7 +7,6 @@ Stand: 14.11.2026, Commit siehe `git log -1`. Gerüst (App Schritt 1) steht; Aud
 ## Aktive Arbeit
 Jeder Strang trägt vor der ersten Änderung eine Zeile ein (Datum, Strangname, Vorhaben, berührte Dateien), pusht sofort und löscht die Zeile nach dem Push. Zeilen älter als 24 Stunden gelten als verwaist; vor dem Entfernen den Entwickler fragen.
 Aktuell:
-- 14.11.2026, GitarrenHeinz-Design: Designvorschlag (Skizze) für Anzeige; berührt nur `docs/design/`, später `lib/display.js`, `css/`.
 
 ## Stränge
 Strangname gilt, nicht der Titel in der Chat-Liste. Neue Stränge legt nur der Root an. Reihenfolge: App zuerst (Fundament), danach Audio und Design parallel (verschiedene Dateien).
@@ -17,7 +16,7 @@ Strangname gilt, nicht der Titel in der Chat-Liste. Neue Stränge legt nur der R
 | GitarrenHeinz (Root) | Konzept, Querprüfung, Register, Aufträge | läuft; Projektordner und Anweisungen angelegt 14.11.2026 |
 | GitarrenHeinz-App | Grundgerüst, Fundament, Instrumentendaten, Sprache DE/EN, PWA offline, Hosting; `AUFTRAG_App.md` | Schritt 1 (Gerüst) fertig 14.11.2026; Rest des Auftrags erledigt, bis auf Handytest (Installation, Offline) |
 | GitarrenHeinz-Audio | Mikrofon, Tonhöhenerkennung, Bezugston, Nadelzonen; `AUFTRAG_Audio.md` | Auftrag geschrieben, **kann starten** (Gerüst steht) |
-| GitarrenHeinz-Design | Anzeige (Nadel, Kopfplatte mit Mechaniken), Stil Braun/früher Apple; `AUFTRAG_Design.md` | Auftrag geschrieben, **kann starten**, parallel zu Audio (andere Dateien: `lib/display.js`, `css/`) |
+| GitarrenHeinz-Design | Anzeige (Nadel, Kopfplatte mit Mechaniken), Stil Braun/früher Apple; `AUFTRAG_Design.md` | Aufgabe 1 (Vorschlag) liegt vor: `docs/design/vorschlag.html` und `.png`, 14.11.2026; **wartet auf Entscheidung des Entwicklers**, danach Bau von `lib/display.js` und `css/` |
 
 ## Module
 | Modul | Datei | Stand | Nächster Schritt |
@@ -43,7 +42,7 @@ Strangname gilt, nicht der Titel in der Chat-Liste. Neue Stränge legt nur der R
 - Bezugston: Bereich und Schritt sind vorläufig 400–480 Hz, Schritt 1 (`Tuner.config`); Vorschlag Strang Audio.
 - Tonhöhenerkennung: Verfahren (Autokorrelation, YIN o. ä.) und Genauigkeitsziel; Vorschlag macht der Strang Audio, Entwickler entscheidet.
 - Schwellen der Nadelzonen (`--`, `-`, `0`, `+`, `++`) in Cent und Bereich des Bezugstons: Vorschlag Strang Audio.
-- Gestaltung (Nadel, Kopfplatte mit sechs Mechaniken, Braun/früher Apple): Vorschlag Strang Design.
+- Gestaltung (Nadel, Kopfplatte mit sechs Mechaniken, Braun/früher Apple): Vorschlag liegt vor (`docs/design/vorschlag.html`), Entscheidung des Entwicklers steht aus (Fragen siehe ENTWICKLUNGSVERLAUF 14.11.2026, Design).
 
 ## Nächste Aufgaben
 1. ~~Repo anlegen~~ (erledigt 14.11.2026: `PythonHeinz/Gitarrentuner`, Steuerdateien eingecheckt).

@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gitarren Heinz – Designvorschlag (Skizze)</title>
+<style>
+/* Skizze des Strangs GitarrenHeinz-Design. Eigenständig, offline, keine externen Ressourcen.
+   Nicht Teil der App. Zeigt vier Zustände im Hochformat 426 x 803 px. */
+:root {
+  --bg: #e6e3dc;       /* warmes Hellgrau, Gerätegehäuse */
+  --face: #f5f3ed;     /* Skalenfläche */
+  --ink: #1f1d1a;      /* Schwarz der Beschriftung */
+  --sub: #5f5a52;      /* Nebentext, Kontrast >= 4.5:1 auf --bg */
+  --line: #c9c4b8;
+  --acc: #e0561b;      /* Braun-Orange: Nadel, Auswahl */
+  --ok: #2f7d45;       /* Grün: gestimmt */
+  --peg: #fbfaf6;
+  --head: #2b2825;     /* Kopfplatte */
+  --font: "Helvetica Neue", Helvetica, Arial, Roboto, system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: #bdb9b0; font-family: var(--font); color: var(--ink); }
+.sheet { display: flex; gap: 28px; padding: 28px; width: max-content; }
+.cap { font: 600 13px/1.2 var(--font); color: #2b2825; margin: 0 0 8px 2px; letter-spacing: .02em; }
+.phone { width: 426px; height: 803px; background: var(--bg); border-radius: 22px; overflow: hidden;
+  display: flex; flex-direction: column; padding: 0 20px 18px; position: relative; }
+.bar { display: flex; align-items: center; justify-content: space-between; height: 58px; flex: none; }
+.bar h1 { margin: 0; font-size: 17px; font-weight: 700; letter-spacing: .04em; text-transform: none; }
+.lang { display: flex; border: 1px solid var(--line); border-radius: 99px; padding: 3px; background: var(--face); }
+.lang span { padding: 8px 12px; min-width: 48px; text-align: center; border-radius: 99px; font-size: 13px; font-weight: 700; color: var(--sub); }
+.lang span.on { background: var(--ink); color: var(--bg); }
+
+.dial { flex: none; background: var(--face); border: 1px solid var(--line); border-radius: 18px; padding: 10px 8px 0; position: relative;
+  box-shadow: inset 0 1px 0 #fff, 0 1px 0 rgba(0,0,0,.04); }
+.dial svg { display: block; width: 100%; height: auto; }
+.needle { transform-origin: 180px 196px; transition: transform .35s cubic-bezier(.3,1.25,.5,1); }
+.needle.idle { opacity: .28; }
+.zl { font: 700 24px var(--font); fill: var(--sub); text-anchor: middle; }
+.zl.hit { fill: var(--ink); }
+.zl.ok { fill: var(--ok); }
+.readout { text-align: center; padding: 6px 0 10px; }
+.big { font-size: 56px; line-height: 1; font-weight: 700; letter-spacing: -.01em; min-height: 56px; }
+.big.dim { color: #aaa59a; }
+.small { margin-top: 6px; font-size: 15px; color: var(--sub); font-variant-numeric: tabular-nums; min-height: 20px; }
+.state { margin-top: 4px; font-size: 15px; font-weight: 700; min-height: 22px; }
+.state.ok { color: var(--ok); }
+
+.head { flex: 1; min-height: 150px; margin-top: 10px; }
+.head svg { width: 100%; height: 100%; display: block; }
+.peg circle.k { fill: var(--peg); stroke: var(--line); stroke-width: 2; }
+.peg text { font: 700 26px var(--font); text-anchor: middle; dominant-baseline: central; fill: var(--ink); }
+.peg.target circle.k { fill: var(--ink); stroke: var(--ink); }
+.peg.target text { fill: var(--peg); }
+.peg.sel circle.k { fill: var(--acc); stroke: var(--acc); }
+.peg.sel text { fill: #fff; }
+.peg.sel circle.ring { stroke: var(--acc); }
+.peg circle.ring { fill: none; stroke: transparent; stroke-width: 2; }
+.peg.off { opacity: .85; }
+
+.ctl { flex: none; display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
+.row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.lbl { font-size: 14px; color: var(--sub); }
+.btn { min-height: 52px; border-radius: 14px; border: 1px solid var(--line); background: var(--face); font: 600 16px var(--font); color: var(--ink); padding: 0 18px;
+  box-shadow: 0 1px 0 #fff inset, 0 1px 2px rgba(0,0,0,.06); display: flex; align-items: center; justify-content: center; }
+.btn.go { width: 100%; background: var(--ink); border-color: var(--ink); color: var(--bg); font-size: 17px; letter-spacing: .04em; }
+.btn.go.on { background: var(--acc); border-color: var(--acc); color: #fff; }
+.seg { display: flex; gap: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--face); padding: 3px; }
+.seg span { min-height: 46px; min-width: 112px; display: flex; align-items: center; justify-content: center; border-radius: 11px; font: 600 15px var(--font); color: var(--sub); }
+.seg span.on { background: var(--ink); color: var(--bg); }
+.step { display: flex; align-items: center; gap: 8px; }
+.step .btn { min-width: 52px; padding: 0; font-size: 22px; }
+.step output { min-width: 86px; text-align: center; font: 600 17px var(--font); font-variant-numeric: tabular-nums; }
+.hint { font-size: 13px; color: var(--sub); text-align: center; margin: 0 20px; position: absolute; left: 0; right: 0; bottom: 6px; display: none; }
+.demo { margin: 0 0 0 4px; font: 13px var(--font); color: #2b2825; width: 426px; }
+.demo input { width: 100%; }
+</style>
+</head>
+<body>
+<div class="sheet" id="sheet"></div>
+<script>
+(function () {
+  'use strict';
+  // Vorläufige Schwellen in Cent (Vorschlag liegt beim Strang Audio): 0 bis ±5, - / + bis ±20, -- / ++ darüber.
+  var Z0 = 5, Z1 = 20, MAXC = 50, MAXA = 62, R = 155;
+  var LAB = { de: ['E', 'A', 'D', 'G', 'H', 'E'], en: ['E', 'A', 'D', 'G', 'B', 'E'] };
+  // Kopfplatte: links von der Spitze nach unten D A E, rechts G H E (Daten: headstock in gitarre-klassisch.json)
+  var LEFT = [['D', 'd3'], ['A', 'a2'], ['E', 'e2']];
+  var RIGHT = [['G', 'g3'], ['H', 'b3'], ['E', 'e4']];
+
+  function ang(c) { var v = Math.max(-MAXC, Math.min(MAXC, c)); return v / MAXC * MAXA; }
+  function pt(r, a) { var t = a * Math.PI / 180; return [180 + r * Math.sin(t), 196 - r * Math.cos(t)]; }
+  function zone(c) { var a = Math.abs(c); return a <= Z0 ? 0 : (a <= Z1 ? 1 : 2) * (c < 0 ? -1 : 1); }
+
+  function dialSVG(s) {
+    var o = '<svg viewBox="0 34 360 182" role="img" aria-label="Skala">';
+    // Skalenbogen
+    var a0 = pt(R, -MAXA), a1 = pt(R, MAXA);
+    o += '<path d="M' + a0[0] + ' ' + a0[1] + ' A' + R + ' ' + R + ' 0 0 1 ' + a1[0] + ' ' + a1[1] + '" fill="none" stroke="#1f1d1a" stroke-width="1.5"/>';
+    // Zone 0 als Band
+    var z0 = pt(R, -ang(Z0)), z1 = pt(R, ang(Z0));
+    var okc = s.zone === 0 && s.cents !== null;
+    o += '<path d="M' + z0[0] + ' ' + z0[1] + ' A' + R + ' ' + R + ' 0 0 1 ' + z1[0] + ' ' + z1[1] + '" fill="none" stroke="' + (okc ? '#2f7d45' : '#c9c4b8') + '" stroke-width="10"/>';
+    // Striche
+    for (var c = -MAXC; c <= MAXC; c += 5) {
+      var major = (c === 0 || Math.abs(c) === Z0 || Math.abs(c) === Z1 || Math.abs(c) === MAXC);
+      var len = c === 0 ? 30 : (major ? 20 : 11);
+      var p = pt(R, ang(c)), q = pt(R - len, ang(c));
+      o += '<line x1="' + p[0] + '" y1="' + p[1] + '" x2="' + q[0] + '" y2="' + q[1] + '" stroke="#1f1d1a" stroke-width="' + (c === 0 ? 3 : (major ? 2 : 1)) + '"/>';
+    }
+    // Zonenbeschriftung  --  -  0  +  ++
+    var zs = [['--', -37.5, -2], ['−', -12.5, -1], ['0', 0, 0], ['+', 12.5, 1], ['++', 37.5, 2]];
+    zs.forEach(function (z) {
+      var p = pt(106, ang(z[1])); var hit = s.cents !== null && s.zone === z[2];
+      o += '<text class="zl' + (hit ? (z[2] === 0 ? ' ok' : ' hit') : '') + '" x="' + p[0] + '" y="' + (p[1] + 7) + '">' + z[0] + '</text>';
+    });
+    // Nadel
+    var rot = s.cents === null ? 0 : ang(s.cents);
+    o += '<g class="needle' + (s.cents === null ? ' idle' : '') + '" style="transform:rotate(' + rot + 'deg)">' +
+      '<line x1="180" y1="196" x2="180" y2="50" stroke="#e0561b" stroke-width="3" stroke-linecap="round"/>' +
+      '<line x1="180" y1="196" x2="180" y2="214" stroke="#e0561b" stroke-width="3" stroke-linecap="round"/></g>';
+    o += '<circle cx="180" cy="196" r="11" fill="#1f1d1a"/><circle cx="180" cy="196" r="3.5" fill="#f5f3ed"/>';
+    return o + '</svg>';
+  }
+
+  function pegG(label, id, x, y, s) {
+    var cls = 'peg';
+    if (s.mode === 'manual' && s.selected === id) cls += ' sel';
+    else if (s.mode === 'auto' && s.target === id) cls += ' target';
+    return '<g class="' + cls + '" data-id="' + id + '"><circle class="ring" cx="' + x + '" cy="' + y + '" r="35"/>' +
+      '<circle class="k" cx="' + x + '" cy="' + y + '" r="29"/><text x="' + x + '" y="' + (y + 1) + '">' + label + '</text></g>';
+  }
+  function headSVG(s) {
+    var o = '<svg viewBox="0 0 360 250" preserveAspectRatio="xMidYMid meet" role="group" aria-label="Kopfplatte">';
+    var ys = [38, 125, 212], lx = 50, rx = 310;
+    // Wellen der Mechaniken
+    ys.forEach(function (y) {
+      o += '<line x1="' + lx + '" y1="' + y + '" x2="118" y2="' + y + '" stroke="#2b2825" stroke-width="7" stroke-linecap="round"/>';
+      o += '<line x1="' + rx + '" y1="' + y + '" x2="242" y2="' + y + '" stroke="#2b2825" stroke-width="7" stroke-linecap="round"/>';
+    });
+    // Kopfplatte (Silhouette) und Sattel
+    o += '<path d="M126 6 H234 Q246 6 246 20 V150 L232 244 H128 L114 150 V20 Q114 6 126 6 Z" fill="#2b2825"/>';
+    o += '<rect x="128" y="238" width="104" height="5" rx="2" fill="#f5f3ed" opacity=".8"/>';
+    // Saiten zum Sattel
+    var nutL = [138, 154, 170], nutR = [190, 206, 222];
+    LEFT.forEach(function (p, i) { o += '<line x1="' + 120 + '" y1="' + ys[i] + '" x2="' + nutL[i] + '" y2="241" stroke="#e8e5de" stroke-width="1.3" opacity=".6"/>'; });
+    RIGHT.forEach(function (p, i) { o += '<line x1="' + 240 + '" y1="' + ys[i] + '" x2="' + nutR[i] + '" y2="241" stroke="#e8e5de" stroke-width="1.3" opacity=".6"/>'; });
+    LEFT.forEach(function (p, i) { o += pegG(p[0], p[1], lx, ys[i], s); });
+    RIGHT.forEach(function (p, i) { o += pegG(p[0], p[1], rx, ys[i], s); });
+    return o + '</svg>';
+  }
+
+  function phone(title, s) {
+    var read = '', small = '', st = '', stc = '';
+    if (!s.running) { read = '<div class="big dim">–</div>'; small = 'Mikrofon aus'; }
+    else if (s.cents === null) { read = '<div class="big dim">–</div>'; small = 'Saite anschlagen'; }
+    else {
+      read = '<div class="big">' + s.note[0] + '</div>';
+      small = s.note + ' · ' + s.hz.toFixed(1).replace('.', ',') + ' Hz · ' + (s.cents > 0 ? '+' : (s.cents < 0 ? '−' : '')) + Math.abs(Math.round(s.cents)) + ' ct';
+      if (s.zone === 0) { st = 'Gestimmt'; stc = ' ok'; } else st = s.cents < 0 ? 'Zu tief' : 'Zu hoch';
+    }
+    var h = '<div><p class="cap">' + title + '</p><div class="phone">' +
+      '<div class="bar"><h1>Gitarren Heinz</h1><div class="lang"><span class="on">DE</span><span>EN</span></div></div>' +
+      '<div class="dial">' + dialSVG(s) + '<div class="readout">' + read + '<div class="small">' + small + '</div><div class="state' + stc + '">' + st + '</div></div></div>' +
+      '<div class="head">' + headSVG(s) + '</div>' +
+      '<div class="ctl">' +
+      '<div class="btn go' + (s.running ? ' on' : '') + '">' + (s.running ? 'Stopp' : 'Start') + '</div>' +
+      '<div class="row"><span class="lbl">Modus</span><div class="seg"><span class="' + (s.mode === 'auto' ? 'on' : '') + '">Automatik</span><span class="' + (s.mode === 'manual' ? 'on' : '') + '">Manuell</span></div></div>' +
+      '<div class="row"><span class="lbl">Bezugston</span><div class="step"><div class="btn">−</div><output>440 Hz</output><div class="btn">+</div></div></div>' +
+      '</div></div></div>';
+    return h;
+  }
+
+  function mk(cents, note, hz, target, mode, selected, running) {
+    return { cents: cents, note: note, hz: hz, target: target, mode: mode, selected: selected, running: running, zone: cents === null ? null : zone(cents) };
+  }
+  var states = [
+    ['1  Keine Eingabe (Mikrofon aus)', mk(null, '', 0, null, 'auto', null, false)],
+    ['2  Zu tief (Automatik, A-Saite −31 ct)', mk(-31, 'A2', 106.5, 'a2', 'auto', null, true)],
+    ['3  Zu hoch (Manuell, G-Saite gewählt, +12 ct)', mk(12, 'G3', 197.4, 'g3', 'manual', 'g3', true)],
+    ['4  Gestimmt (Automatik, tiefe E-Saite +2 ct)', mk(2, 'E2', 82.5, 'e2', 'auto', null, true)]
+  ];
+  var sheet = document.getElementById('sheet');
+  sheet.innerHTML = states.map(function (x) { return phone(x[0], x[1]); }).join('');
+})();
+</script>
+</body>
+</html>
