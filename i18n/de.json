@@ -1,0 +1,23 @@
+{
+  "app.title": "Gitarren Heinz",
+  "lang.switch": "Sprache wechseln",
+  "tuner.title": "Tuner",
+  "tuner.idle": "Mikrofon aus",
+  "tuner.listening": "Höre zu …",
+  "tuner.start": "Start",
+  "tuner.stop": "Stopp",
+  "tuner.placeholder.display": "Anzeige folgt (Strang Design)",
+  "tuner.placeholder.audio": "Tonerkennung folgt (Strang Audio)",
+  "mode.label": "Modus",
+  "mode.auto": "Automatik",
+  "mode.manual": "Manuell",
+  "ref.label": "Bezugston",
+  "ref.unit": "Hz",
+  "ref.down": "Bezugston senken",
+  "ref.up": "Bezugston erhöhen",
+  "instrument.label": "Instrument",
+  "settings.version": "Version {v}",
+  "error.mic.denied": "Mikrofonzugriff verweigert",
+  "error.mic.unavailable": "Kein Mikrofon verfügbar",
+  "error.data": "Daten konnten nicht geladen werden"
+}

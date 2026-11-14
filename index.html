@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#e9e6df">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Gitarren Heinz</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+<div id="app">
+  <header class="bar">
+    <h1 data-i18n="app.title">Gitarren Heinz</h1>
+    <button id="lang-btn" class="lang" type="button" data-i18n-attr="aria-label:lang.switch">
+      <span data-l="de">DE</span><span data-l="en">EN</span>
+    </button>
+  </header>
+
+  <main>
+    <section id="display" aria-label="Tuner"></section>
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+
+    <div class="row">
+      <button id="run-btn" class="primary" type="button" data-i18n="tuner.start">Start</button>
+    </div>
+
+    <div class="row" role="radiogroup" data-i18n-attr="aria-label:mode.label" id="mode-group">
+      <span class="lbl" data-i18n="mode.label">Modus</span>
+      <div class="seg">
+        <button type="button" role="radio" data-mode="auto" data-i18n="mode.auto">Automatik</button>
+        <button type="button" role="radio" data-mode="manual" data-i18n="mode.manual">Manuell</button>
+      </div>
+    </div>
+
+    <div class="row" id="ref-group">
+      <span class="lbl" data-i18n="ref.label">Bezugston</span>
+      <div class="stepper">
+        <button id="ref-down" type="button" data-i18n-attr="aria-label:ref.down">−</button>
+        <output id="ref-value" aria-live="off"></output>
+        <button id="ref-up" type="button" data-i18n-attr="aria-label:ref.up">+</button>
+      </div>
+    </div>
+
+    <div class="row" id="instrument-row" hidden>
+      <label class="lbl" for="instrument-select" data-i18n="instrument.label">Instrument</label>
+      <select id="instrument-select"></select>
+    </div>
+  </main>
+
+  <footer class="foot"><small id="version"></small></footer>
+</div>
+
+<script src="version.js"></script>
+<script src="lib/core.js"></script>
+<script src="lib/instruments.js"></script>
+<script src="lib/audio.js"></script>
+<script src="lib/display.js"></script>
+<script src="lib/app.js"></script>
+</body>
+</html>

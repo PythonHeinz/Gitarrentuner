@@ -1,0 +1,23 @@
+{
+  "app.title": "Gitarren Heinz",
+  "lang.switch": "Switch language",
+  "tuner.title": "Tuner",
+  "tuner.idle": "Microphone off",
+  "tuner.listening": "Listening …",
+  "tuner.start": "Start",
+  "tuner.stop": "Stop",
+  "tuner.placeholder.display": "Display to follow (strand Design)",
+  "tuner.placeholder.audio": "Pitch detection to follow (strand Audio)",
+  "mode.label": "Mode",
+  "mode.auto": "Automatic",
+  "mode.manual": "Manual",
+  "ref.label": "Reference pitch",
+  "ref.unit": "Hz",
+  "ref.down": "Lower reference pitch",
+  "ref.up": "Raise reference pitch",
+  "instrument.label": "Instrument",
+  "settings.version": "Version {v}",
+  "error.mic.denied": "Microphone access denied",
+  "error.mic.unavailable": "No microphone available",
+  "error.data": "Could not load data"
+}

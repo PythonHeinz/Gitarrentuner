@@ -1,0 +1,18 @@
+{
+  "id": "gitarre-klassisch",
+  "name": { "de": "Gitarre, klassisch", "en": "Guitar, standard" },
+  "referenceNote": "A4",
+  "strings": [
+    { "id": "e2", "note": "E2", "semitones": -29, "label": { "de": "E", "en": "E" } },
+    { "id": "a2", "note": "A2", "semitones": -24, "label": { "de": "A", "en": "A" } },
+    { "id": "d3", "note": "D3", "semitones": -19, "label": { "de": "D", "en": "D" } },
+    { "id": "g3", "note": "G3", "semitones": -14, "label": { "de": "G", "en": "G" } },
+    { "id": "b3", "note": "B3", "semitones": -10, "label": { "de": "H", "en": "B" } },
+    { "id": "e4", "note": "E4", "semitones": -5,  "label": { "de": "E", "en": "E" } }
+  ],
+  "headstock": {
+    "layout": "3+3",
+    "left":  ["d3", "a2", "e2"],
+    "right": ["g3", "b3", "e4"]
+  }
+}

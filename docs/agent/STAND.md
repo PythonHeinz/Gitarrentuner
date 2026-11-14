@@ -2,12 +2,11 @@
 
 Projekt: einfacher Gitarrentuner für sechssaitige Gitarren als HTML-Web-App für Smartphones/Android, Design im Stil von Braun und frühem Apple; später Ukulele und weitere Instrumente. Routine: `UEBERGABE.md`. Projektanweisung: `PROJEKTANWEISUNG.md` (diese Ordner).
 
-Stand: 14.11.2026. Projekt gerade angelegt, noch kein Code. Maßgeblich ist das Repo `PythonHeinz/Gitarrentuner` (Branch `main`); es gibt keine zweite Ablage der Steuerdateien am PC.
+Stand: 14.11.2026, Commit siehe `git log -1`. Gerüst (App Schritt 1) steht; Audio und Design können starten. Maßgeblich ist das Repo `PythonHeinz/Gitarrentuner` (Branch `main`); es gibt keine zweite Ablage der Steuerdateien am PC.
 
 ## Aktive Arbeit
 Jeder Strang trägt vor der ersten Änderung eine Zeile ein (Datum, Strangname, Vorhaben, berührte Dateien), pusht sofort und löscht die Zeile nach dem Push. Zeilen älter als 24 Stunden gelten als verwaist; vor dem Entfernen den Entwickler fragen.
 Aktuell:
-- 14.11.2026, GitarrenHeinz-App: Schritt 1 Gerüst (index.html, lib/, instruments/, i18n/, sw.js, manifest, tests/, docs/SCHNITTSTELLEN.md, docs/agent/TECHNIK.md)
 
 ## Stränge
 Strangname gilt, nicht der Titel in der Chat-Liste. Neue Stränge legt nur der Root an. Reihenfolge: App zuerst (Fundament), danach Audio und Design parallel (verschiedene Dateien).
@@ -15,15 +14,18 @@ Strangname gilt, nicht der Titel in der Chat-Liste. Neue Stränge legt nur der R
 | Strang | Inhalt | Stand |
 |---|---|---|
 | GitarrenHeinz (Root) | Konzept, Querprüfung, Register, Aufträge | läuft; Projektordner und Anweisungen angelegt 14.11.2026 |
-| GitarrenHeinz-App | Grundgerüst, Fundament, Instrumentendaten, Sprache DE/EN, PWA offline, Hosting; `AUFTRAG_App.md` | Auftrag geschrieben, **startet zuerst**, nicht gestartet |
-| GitarrenHeinz-Audio | Mikrofon, Tonhöhenerkennung, Bezugston, Nadelzonen; `AUFTRAG_Audio.md` | Auftrag geschrieben, startet nach App Schritt 1 |
-| GitarrenHeinz-Design | Anzeige (Nadel, Kopfplatte mit Mechaniken), Stil Braun/früher Apple; `AUFTRAG_Design.md` | Auftrag geschrieben, startet nach App Schritt 1, parallel zu Audio |
+| GitarrenHeinz-App | Grundgerüst, Fundament, Instrumentendaten, Sprache DE/EN, PWA offline, Hosting; `AUFTRAG_App.md` | Schritt 1 (Gerüst) fertig 14.11.2026; Rest des Auftrags erledigt, bis auf Handytest (Installation, Offline) |
+| GitarrenHeinz-Audio | Mikrofon, Tonhöhenerkennung, Bezugston, Nadelzonen; `AUFTRAG_Audio.md` | Auftrag geschrieben, **kann starten** (Gerüst steht) |
+| GitarrenHeinz-Design | Anzeige (Nadel, Kopfplatte mit Mechaniken), Stil Braun/früher Apple; `AUFTRAG_Design.md` | Auftrag geschrieben, **kann starten**, parallel zu Audio (andere Dateien: `lib/display.js`, `css/`) |
 
 ## Module
 | Modul | Datei | Stand | Nächster Schritt |
 |---|---|---|---|
-| Tuner | – | nicht begonnen | Konzept im Root klären |
-| Instrumente (Daten) | – | nicht begonnen | Format festlegen (Gitarre zuerst, Ukulele später) |
+| Gerüst (Seite, Kern, Einstellungen, i18n) | `index.html`, `lib/core.js`, `lib/app.js`, `i18n/` | fertig, getestet (Container) | – |
+| Instrumente (Daten) | `instruments/`, `lib/instruments.js` | fertig: Gitarre klassisch; Format in `docs/SCHNITTSTELLEN.md` | Ukulele später |
+| PWA offline | `sw.js`, `manifest.webmanifest`, `version.js` | fertig, im Container getestet (Offline simuliert) | Handytest: installieren, Flugmodus |
+| Tonerkennung | `lib/audio.js` | Platzhalter | Strang Audio |
+| Anzeige | `lib/display.js`, `css/` | Platzhalter | Strang Design |
 
 ## Entscheidungen
 - 14.11.2026 (Entwickler): einfacher Gitarrentuner, sechssaitig; später Ukulele und andere Instrumente; HTML-Web-App; Stil Braun/früher Apple; Zielgerät Smartphone/Android; Arbeit über GitHub wie bei den anderen Projekten.
@@ -37,6 +39,7 @@ Strangname gilt, nicht der Titel in der Chat-Liste. Neue Stränge legt nur der R
 - 14.11.2026 (Entwickler): Anzeige als **Nadel** mit Skala `--  -  0  +  ++` (zu tief bis zu hoch; Schwellen in Cent schlägt der Strang Audio vor, Entwickler entscheidet).
 
 ## Offen (Entwickler fragen, nicht selbst entscheiden)
+- Bezugston: Bereich und Schritt sind vorläufig 400–480 Hz, Schritt 1 (`Tuner.config`); Vorschlag Strang Audio.
 - Tonhöhenerkennung: Verfahren (Autokorrelation, YIN o. ä.) und Genauigkeitsziel; Vorschlag macht der Strang Audio, Entwickler entscheidet.
 - Schwellen der Nadelzonen (`--`, `-`, `0`, `+`, `++`) in Cent und Bereich des Bezugstons: Vorschlag Strang Audio.
 - Gestaltung (Nadel, Kopfplatte mit sechs Mechaniken, Braun/früher Apple): Vorschlag Strang Design.
@@ -44,7 +47,8 @@ Strangname gilt, nicht der Titel in der Chat-Liste. Neue Stränge legt nur der R
 ## Nächste Aufgaben
 1. ~~Repo anlegen~~ (erledigt 14.11.2026: `PythonHeinz/Gitarrentuner`, Steuerdateien eingecheckt).
 2. ~~Aufträge schreiben~~ (erledigt 14.11.2026: `AUFTRAG_App.md`, `AUFTRAG_Audio.md`, `AUFTRAG_Design.md`). Entwickler startet als Erstes den Strang `GitarrenHeinz-App`.
-3. Entwickler: Systeminstruktion (Codeblock in `PROJEKTANWEISUNG.md`) ins Claude-Projekt kopieren; GitHub Pages im Repo freischalten (Settings → Pages, Branch `main`); Repo muss dafür öffentlich sein (oder bezahlter Plan).
+3. Entwickler: Strang `GitarrenHeinz-Audio` und `GitarrenHeinz-Design` starten (parallel möglich); Reihenfolge der Dateien siehe `docs/SCHNITTSTELLEN.md`.
+4. Entwickler: Systeminstruktion (Codeblock in `PROJEKTANWEISUNG.md`) ins Claude-Projekt kopieren; GitHub Pages im Repo freischalten (Settings → Pages, Branch `main`); Repo muss dafür öffentlich sein (oder bezahlter Plan).
 
 ## Berührt Fundament (Chronik der Eingriffe)
-(noch keine)
+- 14.11.2026, GitarrenHeinz-App: Fundament angelegt (Kern, Instrumentenformat, Speicherschlüssel `gh.*`, Schnittstellen Audio/Display, Service Worker, i18n). Sprachverfahren aus Heinz UI, PWA-Muster aus INCIheinz-app kopiert. Beschreibung: `docs/SCHNITTSTELLEN.md`.
