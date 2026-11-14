@@ -26,17 +26,18 @@ Strangname gilt, nicht der Titel in der Chat-Liste. Neue Stränge legt nur der R
 
 ## Entscheidungen
 - 14.11.2026 (Entwickler): einfacher Gitarrentuner, sechssaitig; später Ukulele und andere Instrumente; HTML-Web-App; Stil Braun/früher Apple; Zielgerät Smartphone/Android; Arbeit über GitHub wie bei den anderen Projekten.
+- 14.11.2026 (Entwickler): als installierbare Web-App (PWA), gehostet über GitHub Pages (HTTPS), **nicht** über localhost wie bei Heinz UI.
 
 ## Offen (Entwickler fragen, nicht selbst entscheiden)
 - Sprache der Oberfläche (nur Deutsch, oder Englisch mit Umschalter wie bei AIUIheinz).
-- Offline-Fähigkeit/Installierbarkeit (PWA) und Hosting (GitHub Pages).
+- Offline-Betrieb (Service Worker, App nach der Installation ohne Netz nutzbar?).
 - Tonerkennung: reine Browser-Technik oder Bibliothek; Bezugston (Standard 440 Hz, einstellbar?); Automatik oder manuelle Saitenwahl.
 - Welche Instrumente und Stimmungen in der ersten Fassung (nur Standardstimmung oder auch alternative Stimmungen).
 
 ## Nächste Aufgaben
 1. ~~Repo anlegen~~ (erledigt 14.11.2026: `PythonHeinz/Gitarrentuner`, Steuerdateien eingecheckt).
 2. Root klärt die offenen Entscheidungen oben mit dem Entwickler und schreibt die ersten Aufträge (`AUFTRAG_<Strang>.md`).
-3. Entwickler: Systeminstruktion (Codeblock in `PROJEKTANWEISUNG.md`) ins Claude-Projekt kopieren; GitHub Pages freischalten, wenn Hosting gewünscht.
+3. Entwickler: Systeminstruktion (Codeblock in `PROJEKTANWEISUNG.md`) ins Claude-Projekt kopieren; GitHub Pages im Repo freischalten (Settings → Pages, Branch `main`); Repo muss dafür öffentlich sein (oder bezahlter Plan).
 
 ## Berührt Fundament (Chronik der Eingriffe)
 (noch keine)
