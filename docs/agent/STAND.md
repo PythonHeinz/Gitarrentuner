@@ -26,17 +26,20 @@ Strangname gilt, nicht der Titel in der Chat-Liste. Neue Stränge legt nur der R
 
 ## Entscheidungen
 - 14.11.2026 (Entwickler): einfacher Gitarrentuner, sechssaitig; später Ukulele und andere Instrumente; HTML-Web-App; Stil Braun/früher Apple; Zielgerät Smartphone/Android; Arbeit über GitHub wie bei den anderen Projekten.
-- 14.11.2026 (Entwickler): als installierbare Web-App (PWA), gehostet über GitHub Pages (HTTPS), **nicht** über localhost wie bei Heinz UI.
+- 14.11.2026 (Entwickler): installierbare Web-App (PWA), gehostet über GitHub Pages (HTTPS), **nicht** über localhost wie bei Heinz UI.
+- 14.11.2026 (Entwickler): **absoluter Offline-Betrieb**; keine Online-Abhängigkeit (nur Mikrofon, Frequenzen, Rechnen, HTML); nach der Installation läuft alles ohne Netz.
+- 14.11.2026 (Entwickler): Oberfläche mit Umschalter Deutsch/Englisch, wie bei seinen anderen Apps (Verfahren aus AIUIheinz/INCIheinz übernehmen). Die Bibliotheken seiner anderen Projekte dürfen wiederverwendet werden (kopieren, nicht verlinken, damit das Repo eigenständig bleibt); Übernahme ist Sache des Strangs App und gilt als Eingriff ins Fundament.
+- 14.11.2026 (Entwickler): Tonerkennung **umschaltbar: Automatik oder manuelle Vorwahl**. Manuell wählt man die Saite durch Antippen der Stimmmechanik auf der Kopfplatte in der Anzeige; jede Mechanik trägt den Buchstaben ihrer Saite (Beschriftung folgt der Sprache: deutsch H, englisch B).
+- 14.11.2026 (Entwickler): erste Fassung nur klassische Stimmung E A D G H E (englisch E A D G B E); weitere Stimmungen und Instrumente später (Daten, nicht im Code).
 
 ## Offen (Entwickler fragen, nicht selbst entscheiden)
-- Sprache der Oberfläche (nur Deutsch, oder Englisch mit Umschalter wie bei AIUIheinz).
-- Offline-Betrieb (Service Worker, App nach der Installation ohne Netz nutzbar?).
-- Tonerkennung: reine Browser-Technik oder Bibliothek; Bezugston (Standard 440 Hz, einstellbar?); Automatik oder manuelle Saitenwahl.
-- Welche Instrumente und Stimmungen in der ersten Fassung (nur Standardstimmung oder auch alternative Stimmungen).
+- Bezugston: fest 440 Hz oder einstellbar?
+- Tonhöhenerkennung: Verfahren (Autokorrelation, YIN o. ä.) und Genauigkeitsziel; Vorschlag macht der Strang Audio, Entwickler entscheidet.
+- Darstellung der Anzeige (Zeiger/Nadel, Cent-Skala, Kopfplatte mit sechs Mechaniken): Vorschlag Strang Design.
 
 ## Nächste Aufgaben
 1. ~~Repo anlegen~~ (erledigt 14.11.2026: `PythonHeinz/Gitarrentuner`, Steuerdateien eingecheckt).
-2. Root klärt die offenen Entscheidungen oben mit dem Entwickler und schreibt die ersten Aufträge (`AUFTRAG_<Strang>.md`).
+2. Root klärt den Bezugston mit dem Entwickler und schreibt die ersten Aufträge (`AUFTRAG_<Strang>.md`).
 3. Entwickler: Systeminstruktion (Codeblock in `PROJEKTANWEISUNG.md`) ins Claude-Projekt kopieren; GitHub Pages im Repo freischalten (Settings → Pages, Branch `main`); Repo muss dafür öffentlich sein (oder bezahlter Plan).
 
 ## Berührt Fundament (Chronik der Eingriffe)
