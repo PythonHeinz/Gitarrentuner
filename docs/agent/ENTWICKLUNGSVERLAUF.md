@@ -17,3 +17,10 @@ Behält die letzten rund 10 Tage; Älteres geht nach `docs/archiv/`.
 - **Dateien:** `docs/design/vorschlag.html` (eigenständig, offline), `docs/design/vorschlag.png`. Keine App-Dateien geändert.
 - **Offen (Entwickler entscheidet):** Stil insgesamt; Nadelruhelage im Leerlauf (Mitte blass oder Anschlag links); Hell/Dunkel (nur wenn gewünscht); Schrift; Rastung bei `0` (Nadel bleibt beim Einrasten kurz ruhig).
 - **Nicht auf dem Gerät geprüft:** nur Container-Browser (Chromium), nichts am Handy.
+
+## 14.11.2026 – GitarrenHeinz-Design: Entscheidungen und warme Fassung
+- **Entscheidung (Entwickler):** Stil Hell ist getroffen; Nadel in Ruhelage am linken Anschlag (wie analog); Hell bleibt, dazu eine warme Vorschlagsserie.
+- **Warme Fassung** (`docs/design/vorschlag.html#warm`, Bild `vorschlag-warm.png`): Nussbaum-Furnier (CSS und SVG-Rauschen, keine Bilddatei), gelb leuchtende VU-Skala in schwarzer Fassung mit Bändern rot/bernstein/grün, schwarze Nadel, **LED** unten mittig an der Fassung: rot = außerhalb Zielbereich (über ±20 ct), gelb = im Zielbereich (±5 bis ±20 ct), grün = gestimmt (bis ±5 ct), aus = keine Eingabe. Zusätzlich bleiben Text (Zu tief/Zu hoch/Gestimmt) und Skalenzone, nicht nur Farbe. Kopfplatte auf schwarzer Blende, Mechaniken als Metallknöpfe, gewählte Mechanik amber leuchtend; Tasten und Schalter wie Rackgerät, Bezugston in amberfarbener Anzeige.
+- **Schrift (warm):** Archivo Narrow (SIL OFL), 600 und 700, Großbuchstaben mit Sperrung; Dateien unter `docs/design/fonts/` samt Lizenz, offline. Hell bleibt bei der Systemschrift.
+- **Schwellen** weiter vorläufig (±5, ±20 ct), Entscheidung nach Vorschlag Strang Audio.
+- **Nicht auf dem Gerät geprüft:** nur Chromium im Container.

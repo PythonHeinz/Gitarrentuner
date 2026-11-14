@@ -17,7 +17,7 @@ Strangname gilt, nicht der Titel in der Chat-Liste. Neue Stränge legt nur der R
 | GitarrenHeinz (Root) | Konzept, Querprüfung, Register, Aufträge | läuft; Projektordner und Anweisungen angelegt 14.11.2026 |
 | GitarrenHeinz-App | Grundgerüst, Fundament, Instrumentendaten, Sprache DE/EN, PWA offline, Hosting; `AUFTRAG_App.md` | Schritt 1 (Gerüst) fertig 14.11.2026; Rest des Auftrags erledigt, bis auf Handytest (Installation, Offline) |
 | GitarrenHeinz-Audio | Mikrofon, Tonhöhenerkennung, Bezugston, Nadelzonen; `AUFTRAG_Audio.md` | Auftrag geschrieben, **kann starten** (Gerüst steht) |
-| GitarrenHeinz-Design | Anzeige (Nadel, Kopfplatte mit Mechaniken), Stil Braun/früher Apple; `AUFTRAG_Design.md` | Aufgabe 1 (Vorschlag) liegt vor: `docs/design/vorschlag.html` und `.png`, 14.11.2026; **wartet auf Entscheidung des Entwicklers**, danach Bau von `lib/display.js` und `css/` |
+| GitarrenHeinz-Design | Anzeige (Nadel, Kopfplatte mit Mechaniken), Stil Braun/früher Apple; `AUFTRAG_Design.md` | Aufgabe 1 (Vorschlag) liegt vor: `docs/design/vorschlag.html` und `.png`, 14.11.2026; Hell angenommen, Nadel links; warme Fassung (`#warm`) liegt zur Auswahl vor, **wartet auf Entscheidung Hell/Warm**, danach Bau von `lib/display.js` und `css/` |
 
 ## Module
 | Modul | Datei | Stand | Nächster Schritt |
