@@ -7,6 +7,7 @@ Stand: 14.11.2026, Commit siehe `git log -1`. Gerüst (App Schritt 1) steht; Aud
 ## Aktive Arbeit
 Jeder Strang trägt vor der ersten Änderung eine Zeile ein (Datum, Strangname, Vorhaben, berührte Dateien), pusht sofort und löscht die Zeile nach dem Push. Zeilen älter als 24 Stunden gelten als verwaist; vor dem Entfernen den Entwickler fragen.
 Aktuell:
+- 14.11.2026, GitarrenHeinz-Audio: Tonerkennung bauen (YIN, Mikrofon, Modi). Berührt `lib/audio.js`, `tests/`, `docs/AUDIO.md`, `docs/HANDYTEST.md`; `sw.js`/`version.js` nur Versionserhöhung.
 
 ## Stränge
 Strangname gilt, nicht der Titel in der Chat-Liste. Neue Stränge legt nur der Root an. Reihenfolge: App zuerst (Fundament), danach Audio und Design parallel (verschiedene Dateien).
