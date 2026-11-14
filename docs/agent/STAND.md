@@ -7,6 +7,7 @@ Stand: 14.11.2026. Projekt gerade angelegt, noch kein Code. Maßgeblich ist das 
 ## Aktive Arbeit
 Jeder Strang trägt vor der ersten Änderung eine Zeile ein (Datum, Strangname, Vorhaben, berührte Dateien), pusht sofort und löscht die Zeile nach dem Push. Zeilen älter als 24 Stunden gelten als verwaist; vor dem Entfernen den Entwickler fragen.
 Aktuell:
+- 14.11.2026, GitarrenHeinz-App: Schritt 1 Gerüst (index.html, lib/, instruments/, i18n/, sw.js, manifest, tests/, docs/SCHNITTSTELLEN.md, docs/agent/TECHNIK.md)
 
 ## Stränge
 Strangname gilt, nicht der Titel in der Chat-Liste. Neue Stränge legt nur der Root an. Reihenfolge: App zuerst (Fundament), danach Audio und Design parallel (verschiedene Dateien).
