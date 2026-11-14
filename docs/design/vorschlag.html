@@ -6,7 +6,7 @@
 <title>Gitarren Heinz – Designvorschlag (Skizze)</title>
 <style>
 /* Skizze des Strangs GitarrenHeinz-Design. Eigenständig, offline, keine externen Ressourcen.
-   Nicht Teil der App. Zwei Fassungen: vorschlag.html (hell) und vorschlag.html#warm (Nussbaum, VU-Skala, LED).
+   Nicht Teil der App. Zwei Fassungen: vorschlag.html (hell) und vorschlag.html#warm (Nussbaum-Foto, VU-Skala, LED).
    Vier Zustände im Hochformat 426 x 803 px. */
 @font-face { font-family: "Archivo Narrow"; font-weight: 600; src: url(fonts/archivo-narrow-latin-600-normal.woff2) format("woff2"); }
 @font-face { font-family: "Archivo Narrow"; font-weight: 700; src: url(fonts/archivo-narrow-latin-700-normal.woff2) format("woff2"); }
@@ -69,13 +69,12 @@ body.warm .cap { color: #e9d9b6; }
 
 /* ---------- Fassung warm: Nussbaum, VU-Skala, LED, Rackschrift ---------- */
 .warm { font-family: "Archivo Narrow", "Arial Narrow", "Roboto Condensed", sans-serif-condensed, Arial, sans-serif; color: #efe2c4;
-  background-color: #4a2e1d;
+  background-color: #3b2417;
   background-image:
-    linear-gradient(180deg, rgba(255,210,150,.10), rgba(0,0,0,.28)),
-    repeating-linear-gradient(90deg, rgba(0,0,0,0) 0 9px, rgba(20,8,0,.12) 9px 10px, rgba(255,190,120,.05) 10px 19px, rgba(20,8,0,.07) 19px 22px),
-    linear-gradient(90deg, #5b3825, #4a2d1c 35%, #583624 62%, #43281a); }
-.warm::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .55; mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='426' height='803'><filter id='n' x='0' y='0' width='100%25' height='100%25'><feTurbulence type='fractalNoise' baseFrequency='0.07 0.004' numOctaves='4' seed='7'/><feColorMatrix values='0 0 0 0 0.22  0 0 0 0 0.10  0 0 0 0 0.04  0 0 0 1.5 -0.45'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"); }
+    radial-gradient(ellipse 120% 70% at 50% 0%, rgba(255,215,160,.16), rgba(255,215,160,0) 60%),
+    linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,.32)),
+    url(img/walnut-panel.jpg);
+  background-size: auto, auto, cover; background-position: center; }
 .warm > * { position: relative; }
 .warm .bar h1, .warm .lbl, .warm .btn, .warm .seg span, .warm .state, .warm .small, .warm output, .warm .lang span { text-transform: uppercase; letter-spacing: .09em; }
 .warm .bar h1 { color: #f1e3c4; font-size: 18px; text-shadow: 0 -1px 0 rgba(0,0,0,.55), 0 1px 0 rgba(255,220,170,.14); }

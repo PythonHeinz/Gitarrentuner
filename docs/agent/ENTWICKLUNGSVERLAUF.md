@@ -32,3 +32,8 @@ Behält die letzten rund 10 Tage; Älteres geht nach `docs/archiv/`.
 - **Schrift (warm):** Archivo Narrow (SIL OFL), 600 und 700, Großbuchstaben mit Sperrung; Dateien unter `docs/design/fonts/` samt Lizenz, offline. Hell bleibt bei der Systemschrift.
 - **Schwellen** weiter vorläufig (±5, ±20 ct), Entscheidung nach Vorschlag Strang Audio.
 - **Nicht auf dem Gerät geprüft:** nur Chromium im Container.
+
+## 14.11.2026 – GitarrenHeinz-Design: Nussbaum-Foto statt CSS-Furnier
+- **Was:** Panel der warmen Fassung nutzt jetzt ein echtes Foto: Poly Haven „Walnut Veneer“ (Jenelle van Heerden, CC0). Aus der 4K-Diffuse-Karte ein Hochformat-Ausschnitt (1278 × 2409 px, 270 KB), abgedunkelt und wärmer getönt; darüber CSS-Lichtverlauf und Vignette. Das Original (8 MB) liegt nur am PC (`web sources`), nicht im Repo.
+- **Dateien:** `docs/design/img/walnut-panel.jpg`, `docs/design/img/QUELLE.md` (Quelle, Lizenz, Bearbeitung), `docs/design/vorschlag.html`, Bilder `vorschlag-warm.png`, `vorschlag-hell.png`.
+- **Offen:** Bei Übernahme in die App `img/walnut-panel.jpg` in `SHELL` von `sw.js` eintragen (Offline) und `version.js` erhöhen.
