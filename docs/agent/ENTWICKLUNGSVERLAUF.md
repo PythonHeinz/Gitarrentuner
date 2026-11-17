@@ -37,3 +37,10 @@ Behält die letzten rund 10 Tage; Älteres geht nach `docs/archiv/`.
 - **Was:** Panel der warmen Fassung nutzt jetzt ein echtes Foto: Poly Haven „Walnut Veneer“ (Jenelle van Heerden, CC0). Aus der 4K-Diffuse-Karte ein Hochformat-Ausschnitt (1278 × 2409 px, 270 KB), abgedunkelt und wärmer getönt; darüber CSS-Lichtverlauf und Vignette. Das Original (8 MB) liegt nur am PC (`web sources`), nicht im Repo.
 - **Dateien:** `docs/design/img/walnut-panel.jpg`, `docs/design/img/QUELLE.md` (Quelle, Lizenz, Bearbeitung), `docs/design/vorschlag.html`, Bilder `vorschlag-warm.png`, `vorschlag-hell.png`.
 - **Offen:** Bei Übernahme in die App `img/walnut-panel.jpg` in `SHELL` von `sw.js` eintragen (Offline) und `version.js` erhöhen.
+
+## 17.11.2026 – GitarrenHeinz-Design: Anzeige gebaut
+- **Was:** `lib/display.js` und `css/base.css` neu: Skalenfenster mit Nadel (Feder-Dämpfer, Ruhelage links, 1,2 s Standzeit nach Tonende), LED (aus/rot/gelb/grün nach `Tuner.Audio.zones`), Messwerte, Kopfplatte mit sechs antippbaren Mechaniken (Tippfläche 70 px, Tastatur), Designtaste Warm/Hell (`gh.theme`). Rackschrift Archivo Narrow lokal (`fonts/`), Nussbaum-Foto `img/walnut-panel.jpg` (CC0, Quelle `docs/design/QUELLE-BILDER.md`). Version 0.2.0, `sw.js` SHELL ergänzt.
+- **Doku:** `docs/DESIGN.md`, `docs/SCHNITTSTELLEN.md` (Schlüssel `gh.theme`, `setTheme/getTheme`), Bilder `docs/design/app-warm.png`, `app-hell.png`.
+- **Tests:** `tests/test_design.py` neu; Selektoren in `test_app.py` und `test_audio_browser.py` angepasst; alle Prüfungen grün (`bash tests/run_all.sh`).
+- **Nicht auf dem Gerät geprüft:** alles nur in Container-Chromium (426 × 803 px). Echte Saite, Nadelgefühl, Lesbarkeit, Tippsicherheit und Schrift am Pixel stehen aus.
+- **Offen:** GitHub Pages freischalten (Handy lädt die Seite sonst nicht); echte App-Icons.

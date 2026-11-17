@@ -9,5 +9,8 @@ python3 -m http.server "$PORT" --bind 127.0.0.1 >/dev/null 2>&1 &
 SRV=$!
 trap 'kill $SRV 2>/dev/null' EXIT
 sleep 1
-BASE_URL="http://localhost:$PORT/" python3 tests/test_app.py
-BASE_URL="http://localhost:$PORT/" python3 tests/test_audio_browser.py
+rc=0
+BASE_URL="http://localhost:$PORT/" python3 tests/test_app.py || rc=1
+BASE_URL="http://localhost:$PORT/" python3 tests/test_audio_browser.py || rc=1
+BASE_URL="http://localhost:$PORT/" python3 tests/test_design.py || rc=1
+exit $rc

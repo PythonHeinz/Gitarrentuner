@@ -17,6 +17,10 @@ const SHELL = [
   'i18n/en.json',
   'instruments/index.json',
   'instruments/gitarre-klassisch.json',
+  'fonts/archivo-narrow-latin-600-normal.woff2',
+  'fonts/archivo-narrow-latin-700-normal.woff2',
+  'fonts/LICENSE-ArchivoNarrow.txt',
+  'img/walnut-panel.jpg',
   'icons/icon-192.png',
   'icons/icon-512.png',
   'icons/icon-maskable-512.png'

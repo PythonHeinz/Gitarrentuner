@@ -48,6 +48,7 @@ Neue Dateien eines Strangs müssen in `SHELL` in `sw.js` eingetragen werden (Tes
 - `setInstrument(resolved)`, `setMode('auto'|'manual')`, `setSelected(id|null)`, `update(reading)`, `setRunning(bool)`, `relabel()` (nach Sprachwechsel; Beschriftungen mit `Tuner.Instruments.label(s)` und `Tuner.t(key)`).
 - Sendet `string-select`. Im Modus `auto` sind die Mechaniken nicht antippbar.
 - Texte nur über `Tuner.t('…')`, Schlüssel in `i18n/*.json` ergänzen.
+- Ergänzungen (Strang Design): `setTheme('warm'|'hell')`, `getTheme()`; setzt `data-theme` am `<html>`, `data-running` zeigt den Laufzustand. Ein `reading` mit `freq: null` hält die Anzeige 1,2 s, dann Ruhelage. Seite mit `?demo=1` startet einen Testgenerator. Einzelheiten: `docs/DESIGN.md`.
 
 ## Kern (`lib/core.js`)
 `Tuner.t(key, vars)`, `Tuner.pick({de,en})`, `Tuner.esc(s)`, `Tuner.lang`, `Tuner.setLang(l)`, `Tuner.store.get/set`, `Tuner.config` (Bezugston vorläufig 400–480 Hz, Standard 440, Schritt 1; Vorschlag des Strangs Audio steht aus), `Tuner.version`, `Tuner.ready` (Promise, `document.body[data-ready]` nach dem Start).
@@ -58,6 +59,7 @@ Neue Dateien eines Strangs müssen in `SHELL` in `sw.js` eingetragen werden (Tes
 | `gh.lang` | `"de"` \| `"en"` | Browsersprache (de wenn sie mit „de“ beginnt, sonst en) |
 | `gh.refHz` | ganze Zahl in `Tuner.config.refHz` | 440 |
 | `gh.mode` | `"auto"` \| `"manual"` | `"auto"` |
+| `gh.theme` | `"warm"` \| `"hell"` | `"warm"` (setzt und liest das Display) |
 | `gh.instrument` | Instrument-Id aus `instruments/index.json` | `default` der Indexdatei |
 
 Neue Schlüssel nur mit Eintrag hier.

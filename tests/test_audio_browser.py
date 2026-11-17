@@ -1,6 +1,6 @@
 """Browsertest Mikrofonpfad mit Chromiums Fake-Mikrofon (WAV-Datei als Eingang). Nur synthetisches Signal,
 kein echtes Mikrofon und keine echte Gitarre (siehe docs/HANDYTEST.md)."""
-import math, os, struct, sys, tempfile, wave
+import re, math, os, struct, sys, tempfile, wave
 from playwright.sync_api import sync_playwright
 
 BASE = os.environ.get('BASE_URL', 'http://localhost:8765/')
@@ -56,7 +56,7 @@ with sync_playwright() as p:
     n0 = page.evaluate('window.__readings.length'); page.wait_for_timeout(1000)
     rate = page.evaluate('window.__readings.length') - n0
     check(15 <= rate <= 35, f'Messrate {rate}/s (Soll 20 bis 30)')
-    check('111.' in page.inner_text('#display'), 'Anzeige erhält Messwerte')
+    check(re.search(r'111[.,]\d hz', page.text_content('#display').lower()) is not None, 'Anzeige erhält Messwerte')
 
     # Manuell: andere Saite gewählt → kein Messwert in ±200 Cent
     page.evaluate("Tuner.app.setMode('manual'); Tuner.bus.emit('string-select', {id: 'a2'})")

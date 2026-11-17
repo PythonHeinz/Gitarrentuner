@@ -19,5 +19,17 @@
   "settings.version": "Version {v}",
   "error.mic.denied": "Microphone access denied",
   "error.mic.unavailable": "No microphone available",
-  "error.data": "Could not load data"
+  "error.data": "Could not load data",
+  "display.low": "Too low",
+  "display.high": "Too high",
+  "display.ok": "In tune",
+  "display.strike": "Play a string",
+  "display.pick": "Tap a tuning peg",
+  "display.peg": "String {n}",
+  "display.scale": "Scale",
+  "display.head": "Headstock",
+  "display.cent": "ct",
+  "display.theme.warm": "Wood",
+  "display.theme.hell": "Light",
+  "display.theme.switch": "Switch design"
 }

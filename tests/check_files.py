@@ -76,6 +76,8 @@ for f in sorted(shell):
     if f.endswith(('.html', '.js', '.css', '.webmanifest')):
         t = open(os.path.join(ROOT, f), encoding='utf-8').read()
         for m in re.findall(r'https?://[^\s"\')]+', t):
+            if m == 'http://www.w3.org/2000/svg':   # XML-Namensraum, keine Anfrage
+                continue
             err(f'externe URL in {f}: {m}')
 
 if errors:

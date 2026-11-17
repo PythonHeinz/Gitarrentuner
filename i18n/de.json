@@ -19,5 +19,17 @@
   "settings.version": "Version {v}",
   "error.mic.denied": "Mikrofonzugriff verweigert",
   "error.mic.unavailable": "Kein Mikrofon verfügbar",
-  "error.data": "Daten konnten nicht geladen werden"
+  "error.data": "Daten konnten nicht geladen werden",
+  "display.low": "Zu tief",
+  "display.high": "Zu hoch",
+  "display.ok": "Gestimmt",
+  "display.strike": "Saite anschlagen",
+  "display.pick": "Mechanik antippen",
+  "display.peg": "Saite {n}",
+  "display.scale": "Skala",
+  "display.head": "Kopfplatte",
+  "display.cent": "ct",
+  "display.theme.warm": "Holz",
+  "display.theme.hell": "Hell",
+  "display.theme.switch": "Design wechseln"
 }

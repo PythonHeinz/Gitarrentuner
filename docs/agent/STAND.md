@@ -2,12 +2,12 @@
 
 Projekt: einfacher Gitarrentuner für sechssaitige Gitarren als HTML-Web-App für Smartphones/Android, Design im Stil von Braun und frühem Apple; später Ukulele und weitere Instrumente. Routine: `UEBERGABE.md`. Projektanweisung: `PROJEKTANWEISUNG.md` (diese Ordner).
 
-Stand: 14.11.2026, Commit siehe `git log -1`. Gerüst (App Schritt 1) steht; Audio und Design können starten. Maßgeblich ist das Repo `PythonHeinz/Gitarrentuner` (Branch `main`); es gibt keine zweite Ablage der Steuerdateien am PC.
+Stand: 17.11.2026, Commit siehe `git log -1`. Gerüst, Tonerkennung und Anzeige (Warm/Hell) stehen; offen ist der Handytest. Maßgeblich ist das Repo `PythonHeinz/Gitarrentuner` (Branch `main`); es gibt keine zweite Ablage der Steuerdateien am PC.
 
 ## Aktive Arbeit
 Jeder Strang trägt vor der ersten Änderung eine Zeile ein (Datum, Strangname, Vorhaben, berührte Dateien), pusht sofort und löscht die Zeile nach dem Push. Zeilen älter als 24 Stunden gelten als verwaist; vor dem Entfernen den Entwickler fragen.
 Aktuell:
-- 17.11.2026, GitarrenHeinz-Design: Anzeige bauen (Warm + Hell, LED, Rackschrift). Berührt `lib/display.js`, `css/`, `img/`, `fonts/`, `docs/DESIGN.md`, `tests/` (Anzeige); `sw.js` (SHELL) und `version.js` nur Eintrag/Erhöhung; `index.html`/`lib/app.js` nur nach Absprache.
+- (keine)
 
 ## Stränge
 Strangname gilt, nicht der Titel in der Chat-Liste. Neue Stränge legt nur der Root an. Reihenfolge: App zuerst (Fundament), danach Audio und Design parallel (verschiedene Dateien).
@@ -17,7 +17,7 @@ Strangname gilt, nicht der Titel in der Chat-Liste. Neue Stränge legt nur der R
 | GitarrenHeinz (Root) | Konzept, Querprüfung, Register, Aufträge | läuft; Projektordner und Anweisungen angelegt 14.11.2026 |
 | GitarrenHeinz-App | Grundgerüst, Fundament, Instrumentendaten, Sprache DE/EN, PWA offline, Hosting; `AUFTRAG_App.md` | Schritt 1 (Gerüst) fertig 14.11.2026; Rest des Auftrags erledigt, bis auf Handytest (Installation, Offline) |
 | GitarrenHeinz-Audio | Mikrofon, Tonhöhenerkennung, Bezugston, Nadelzonen; `AUFTRAG_Audio.md` | Modul fertig 14.11.2026 (synthetisch getestet); Handytest steht aus, `docs/HANDYTEST.md` |
-| GitarrenHeinz-Design | Anzeige (Nadel, Kopfplatte mit Mechaniken), Stil Braun/früher Apple; `AUFTRAG_Design.md` | Aufgabe 1 (Vorschlag) liegt vor: `docs/design/vorschlag.html` und `.png`, 14.11.2026; Hell angenommen, Nadel links; warme Fassung (`#warm`) liegt zur Auswahl vor, **wartet auf Entscheidung Hell/Warm**, danach Bau von `lib/display.js` und `css/` |
+| GitarrenHeinz-Design | Anzeige (Nadel, Kopfplatte mit Mechaniken), Stil Braun/früher Apple; `AUFTRAG_Design.md` | Modul „Anzeige“ fertig 17.11.2026 (Container-Chromium); Warm (Nussbaum-Foto, LED) und Hell, beide mit Rackschrift; `docs/DESIGN.md`; Handytest steht aus |
 
 ## Module
 | Modul | Datei | Stand | Nächster Schritt |
@@ -26,7 +26,7 @@ Strangname gilt, nicht der Titel in der Chat-Liste. Neue Stränge legt nur der R
 | Instrumente (Daten) | `instruments/`, `lib/instruments.js` | fertig: Gitarre klassisch; Format in `docs/SCHNITTSTELLEN.md` | Ukulele später |
 | PWA offline | `sw.js`, `manifest.webmanifest`, `version.js` | fertig, im Container getestet (Offline simuliert) | Handytest: installieren, Flugmodus |
 | Tonerkennung | `lib/audio.js`, `docs/AUDIO.md` | fertig, im Container getestet (synthetische Signale, Chromium-Fake-Mikrofon) | Handytest nach `docs/HANDYTEST.md`; danach Konstanten nachstellen |
-| Anzeige | `lib/display.js`, `css/` | Platzhalter | Strang Design |
+| Anzeige | `lib/display.js`, `css/base.css`, `fonts/`, `img/`, `docs/DESIGN.md` | fertig, im Container getestet (`tests/test_design.py`); Version 0.2.0 | Handytest (Lesbarkeit, Tippflächen, Nadelgefühl, LED); echte Icons |
 
 ## Entscheidungen
 - 14.11.2026 (Entwickler): einfacher Gitarrentuner, sechssaitig; später Ukulele und andere Instrumente; HTML-Web-App; Stil Braun/früher Apple; Zielgerät Smartphone/Android; Arbeit über GitHub wie bei den anderen Projekten.
@@ -44,7 +44,9 @@ Strangname gilt, nicht der Titel in der Chat-Liste. Neue Stränge legt nur der R
 
 ## Offen (Entwickler fragen, nicht selbst entscheiden)
 - Konstanten der Tonerkennung (YIN-Schwelle, Gate, Anschlag, Median) sind Anfangswerte; nach dem Handytest nachstellen (Strang Audio).
-- Gestaltung (Nadel, Kopfplatte mit sechs Mechaniken, Braun/früher Apple): Vorschlag liegt vor (`docs/design/vorschlag.html`), Entscheidung des Entwicklers steht aus (Fragen siehe ENTWICKLUNGSVERLAUF 14.11.2026, Design).
+- Handytest der Anzeige (Pixel): Warm und Hell beurteilen; GitHub Pages freischalten, damit das Handy die Seite laden kann.
+
+- 17.11.2026 (Entwickler): Design **Warm** (Nussbaum-Foto, gelbe VU-Skala, LED rot/gelb/grün) wird gebaut, **Hell** bleibt als zweites Thema; Rackschrift (Archivo Narrow) und LED in beiden.
 
 ## Nächste Aufgaben
 1. ~~Repo anlegen~~ (erledigt 14.11.2026: `PythonHeinz/Gitarrentuner`, Steuerdateien eingecheckt).
@@ -54,3 +56,4 @@ Strangname gilt, nicht der Titel in der Chat-Liste. Neue Stränge legt nur der R
 
 ## Berührt Fundament (Chronik der Eingriffe)
 - 14.11.2026, GitarrenHeinz-App: Fundament angelegt (Kern, Instrumentenformat, Speicherschlüssel `gh.*`, Schnittstellen Audio/Display, Service Worker, i18n). Sprachverfahren aus Heinz UI, PWA-Muster aus INCIheinz-app kopiert. Beschreibung: `docs/SCHNITTSTELLEN.md`.
+- 17.11.2026, GitarrenHeinz-Design: Anzeige gebaut. Neu ohne Änderung an `index.html`/`lib/app.js`: Speicherschlüssel `gh.theme`, Attribute `data-theme`/`data-running`, `Display.setTheme/getTheme`; die Designtaste liegt in der Anzeige (App kann sie in den Kopf verlegen). `sw.js` SHELL und `version.js` (0.2.0) angepasst; Tests von App/Audio (Selektoren) angepasst, `tests/run_all.sh` fasst Exit-Codes zusammen.
