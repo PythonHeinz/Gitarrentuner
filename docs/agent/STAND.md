@@ -7,6 +7,7 @@ Stand: 14.11.2026, Commit siehe `git log -1`. Gerüst (App Schritt 1) steht; Aud
 ## Aktive Arbeit
 Jeder Strang trägt vor der ersten Änderung eine Zeile ein (Datum, Strangname, Vorhaben, berührte Dateien), pusht sofort und löscht die Zeile nach dem Push. Zeilen älter als 24 Stunden gelten als verwaist; vor dem Entfernen den Entwickler fragen.
 Aktuell:
+- 17.11.2026, GitarrenHeinz-Design: Anzeige bauen (Warm + Hell, LED, Rackschrift). Berührt `lib/display.js`, `css/`, `img/`, `fonts/`, `docs/DESIGN.md`, `tests/` (Anzeige); `sw.js` (SHELL) und `version.js` nur Eintrag/Erhöhung; `index.html`/`lib/app.js` nur nach Absprache.
 
 ## Stränge
 Strangname gilt, nicht der Titel in der Chat-Liste. Neue Stränge legt nur der Root an. Reihenfolge: App zuerst (Fundament), danach Audio und Design parallel (verschiedene Dateien).
